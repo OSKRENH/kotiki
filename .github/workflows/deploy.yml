@@ -24,10 +24,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Pages включается один раз вручную: Settings → Pages → Source: GitHub Actions.
+      # Токен Actions не имеет прав создать сайт сам (Resource not accessible by integration).
       - name: Настроить Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       # Сайт статический, сборка не нужна — публикуем содержимое репозитория как есть.
       - name: Загрузить артефакт
