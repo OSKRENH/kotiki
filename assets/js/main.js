@@ -274,7 +274,7 @@
   var lb = $('#lightbox');
   var lbImg = $('#lightboxImg');
   var lbCount = $('#lightboxCount');
-  var tiles = $$('#gallery .cat');
+  var tiles = $$('#gallery .shot');
   var idx = 0;
   var lastFocus = null;
 

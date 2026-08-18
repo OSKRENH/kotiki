@@ -470,9 +470,8 @@ ul { margin: 0; padding: 0; list-style: none; }
    ========================================================================== */
 .cats__head {
   display: grid; grid-template-columns: 1fr auto; gap: 28px;
-  align-items: end; margin-bottom: clamp(34px, 5vw, 56px);
+  align-items: end; margin-bottom: clamp(30px, 4vw, 46px);
 }
-.cats__head p { max-width: 60ch; margin-top: 18px; }
 .lettering {
   width: clamp(140px, 15vw, 208px);
   margin-bottom: 14px;
@@ -485,16 +484,106 @@ ul { margin: 0; padding: 0; list-style: none; }
   96%           { transform: rotate(-3deg) scale(1.01); }
 }
 
-.cats__grid {
+/* --- крупный акцент «пять кошек» --- */
+.tally {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  padding: clamp(26px, 3.4vw, 42px) clamp(24px, 3.4vw, 44px);
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+.tally__num {
+  font-size: clamp(5.5rem, 13vw, 11rem);
+  line-height: .8;
+  font-weight: 800;
+  letter-spacing: -.06em;
+  color: var(--orange);
+  font-variant-numeric: tabular-nums;
+}
+.tally__body { max-width: 56ch; }
+
+/* --- пять карточек подопечных --- */
+.wards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(12px, 1.4vw, 18px);
+  margin-top: clamp(18px, 2.4vw, 26px);
+}
+.ward {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  padding: clamp(20px, 2.4vw, 28px) clamp(16px, 1.8vw, 22px);
+  border-radius: var(--r-md);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: transform .55s var(--ease), box-shadow .55s var(--ease),
+              background .55s var(--ease), border-color .55s var(--ease),
+              opacity .95s var(--ease), translate .95s var(--ease), scale .95s var(--ease);
+}
+.ward::before {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 4px;
+  background: var(--orange); transform: scaleX(0); transform-origin: left;
+  transition: transform .55s var(--ease);
+}
+.ward:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.ward:hover::before { transform: scaleX(1); }
+.ward__n {
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem); font-weight: 800; line-height: 1;
+  letter-spacing: -.04em; color: var(--orange); font-variant-numeric: tabular-nums;
+}
+.ward__paw {
+  position: absolute; top: 14px; right: 12px;
+  width: 34px; height: 34px; color: var(--orange); opacity: .16;
+  transition: transform .6s var(--ease), opacity .6s var(--ease);
+}
+.ward__paw svg { width: 100%; height: 100%; }
+.ward:hover .ward__paw { transform: rotate(-12deg) scale(1.12); opacity: .32; }
+.ward__title { font-size: .98rem; font-weight: 800; letter-spacing: -.01em; margin-top: 4px; }
+.ward__status {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .78rem; font-weight: 700; color: var(--ink-soft);
+}
+.ward__status::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--orange);
+  box-shadow: 0 0 0 0 rgba(252, 99, 55, .55);
+  animation: pulse 2.4s var(--ease-io) infinite;
+}
+
+/* --- характеры --- */
+.traits {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 1.4vw, 18px);
+  margin-top: clamp(18px, 2.4vw, 26px);
+}
+.trait {
+  padding: clamp(18px, 2.2vw, 26px) clamp(18px, 2.2vw, 24px);
+  border-radius: var(--r-md);
+  border: 1px dashed var(--line);
+  font-size: .96rem; font-weight: 600; color: var(--ink-soft);
+  transition: border-color .5s var(--ease), color .5s var(--ease), background .5s var(--ease),
+              opacity .95s var(--ease), translate .95s var(--ease), scale .95s var(--ease);
+}
+.trait:hover { border-color: var(--orange); color: var(--ink); background: var(--paper); }
+
+/* --- хроника спасения --- */
+.shots__title {
+  margin: clamp(44px, 6vw, 70px) 0 clamp(18px, 2.2vw, 26px);
+  font-size: .78rem; font-weight: 800; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--muted);
+}
+.shots {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(14px, 1.6vw, 22px);
+  gap: clamp(12px, 1.4vw, 20px);
 }
-.cat {
+.shot {
   position: relative;
-  padding: 0;
-  text-align: left;
-  font: inherit;
+  padding: 0; text-align: left; font: inherit;
   border-radius: var(--r-md);
   overflow: hidden;
   aspect-ratio: 3 / 4;
@@ -503,33 +592,31 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: transform .6s var(--ease), box-shadow .6s var(--ease),
               opacity .95s var(--ease), translate .95s var(--ease), scale .95s var(--ease);
 }
-.cat:nth-child(odd) { margin-top: clamp(0px, 3vw, 38px); }
-.cat img { transition: transform 1.2s var(--ease), filter .6s var(--ease); }
-.cat::after {
+.shot img { transition: transform 1.2s var(--ease); }
+.shot::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(30, 26, 22, .78), rgba(30, 26, 22, .05) 55%);
-  opacity: .55; transition: opacity .5s var(--ease);
+  background: linear-gradient(to top, rgba(30, 26, 22, .72), rgba(30, 26, 22, .04) 55%);
+  opacity: .5; transition: opacity .5s var(--ease);
 }
-.cat:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-.cat:hover img { transform: scale(1.08); }
-.cat:hover::after { opacity: .8; }
-.cat__cap {
-  position: absolute; z-index: 2; left: 18px; right: 18px; bottom: 18px;
-  color: #fff; transform: translateY(10px); opacity: 0;
+.shot:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.shot:hover img { transform: scale(1.08); }
+.shot:hover::after { opacity: .78; }
+.shot__cap {
+  position: absolute; z-index: 2; left: 16px; right: 16px; bottom: 14px;
+  color: #fff; font-size: .78rem; font-weight: 700;
+  transform: translateY(10px); opacity: 0;
   transition: transform .5s var(--ease), opacity .5s var(--ease);
 }
-.cat:hover .cat__cap, .cat:focus-visible .cat__cap { transform: none; opacity: 1; }
-.cat__cap b { display: block; font-size: 1.05rem; font-weight: 800; }
-.cat__cap span { font-size: .82rem; opacity: .82; }
-.cat__zoom {
-  position: absolute; z-index: 2; top: 14px; right: 14px;
-  width: 40px; height: 40px; border-radius: 50%;
+.shot:hover .shot__cap, .shot:focus-visible .shot__cap { transform: none; opacity: 1; }
+.shot__zoom {
+  position: absolute; z-index: 2; top: 12px; right: 12px;
+  width: 38px; height: 38px; border-radius: 50%;
   display: grid; place-items: center;
   background: rgba(255, 255, 255, .92); color: var(--ink);
   transform: scale(.5); opacity: 0;
   transition: transform .45s var(--ease), opacity .45s var(--ease);
 }
-.cat:hover .cat__zoom { transform: none; opacity: 1; }
+.shot:hover .shot__zoom { transform: none; opacity: 1; }
 
 .cats__cta {
   margin-top: clamp(36px, 5vw, 56px);
@@ -543,12 +630,17 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cats__cta p { flex: 1 1 320px; }
 .mailto { font-weight: 800; color: var(--orange); word-break: break-all; }
 
-@media (max-width: 1000px) { .cats__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px)  {
-  .cats__grid { gap: 12px; }
-  .cat:nth-child(odd) { margin-top: 0; }
-  .cat { border-radius: var(--r-sm); }
+@media (max-width: 1000px) {
+  .wards  { grid-template-columns: repeat(3, 1fr); }
+  .shots  { grid-template-columns: repeat(2, 1fr); }
+  .traits { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
   .cats__head { grid-template-columns: 1fr; align-items: start; }
+  .tally { grid-template-columns: 1fr; gap: 12px; text-align: left; }
+  .wards { grid-template-columns: repeat(2, 1fr); }
+  .shots { gap: 10px; }
+  .shot  { border-radius: var(--r-sm); }
 }
 
 /* ==========================================================================
@@ -923,7 +1015,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   }
 
   .story__figure { aspect-ratio: 4 / 3; }
-  .cats__cta { flex-direction: column; align-items: stretch; }
+  .cats__cta { flex-direction: column; align-items: stretch; gap: 18px; }
+  .cats__cta p { flex: 0 1 auto; }
   .cats__cta .btn { justify-content: center; }
   .socials { flex-wrap: wrap; }
   .footer__inner { justify-content: center; text-align: center; }
