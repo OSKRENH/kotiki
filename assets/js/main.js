@@ -323,6 +323,131 @@
     });
   }
 
+
+  /* ------------------------------------------------------------------
+     13. Подопечные: карточки и раскрывающаяся анкета
+     ------------------------------------------------------------------ */
+  var CATS = window.__CATS__ || [];
+  var cardsBox = $('#cards');
+
+  if (cardsBox && CATS.length) {
+    cardsBox.innerHTML = CATS.map(function (c, i) {
+      var age = c.cardAge ? '<span class="card__age">' + c.cardAge + '</span>' : '';
+      return '<button class="card" type="button" data-i="' + i + '" style="--d:' + (i * 80) + '" ' +
+             'aria-label="Открыть карточку: ' + c.name + '">' +
+               '<span class="card__media"' + (c.lqip ? ' style="background-image:url(' + c.lqip + ')"' : '') + '>' +
+                 '<img src="' + c.photos[0] + '" alt="' + c.name + '" loading="lazy" decoding="async">' +
+                 '<span class="card__more">' + c.photos.length + ' фото</span>' +
+               '</span>' +
+               '<span class="card__bar"><b class="card__name">' + c.name + '</b>' + age + '</span>' +
+             '</button>';
+    }).join('');
+
+    $$('.card img', cardsBox).forEach(function (img) {
+      var box = img.parentNode;
+      var done = function () { box.classList.add('is-loaded'); };
+      if (img.complete && img.naturalWidth) done();
+      else { img.addEventListener('load', done); img.addEventListener('error', done); }
+    });
+  }
+
+  var sheet = $('#sheet');
+  var sPhoto = $('#sheetPhoto'), sThumbs = $('#sheetThumbs'), sCount = $('#sheetCount');
+  var sName = $('#sheetName'), sSpecs = $('#sheetSpecs'), sText = $('#sheetText'), sMail = $('#sheetMail');
+  var cur = 0, shot = 0, sheetFocus = null;
+
+  function paintPhoto() {
+    var c = CATS[cur];
+    sPhoto.src = c.photos[shot];
+    sPhoto.alt = c.name + ' — фото ' + (shot + 1);
+    sCount.textContent = (shot + 1) + ' / ' + c.photos.length;
+    var many = c.photos.length > 1;
+    $$('.sheet__nav', sheet).forEach(function (b) { b.hidden = !many; });
+    sCount.hidden = !many;
+    $$('.sheet__thumb', sThumbs).forEach(function (t, i) {
+      t.classList.toggle('is-on', i === shot);
+    });
+  }
+
+  function openSheet(i) {
+    var c = CATS[i];
+    if (!c) return;
+    cur = i; shot = 0;
+    sheetFocus = document.activeElement;
+
+    sName.textContent = c.name;
+
+    var specs = [['Возраст', c.age], ['Пол', c.sex], ['Характер', c.trait], ['Статус', c.status]]
+      .filter(function (p) { return p[1]; })
+      .map(function (p) {
+        return '<div class="spec"><span class="spec__k">' + p[0] + '</span><span class="spec__v">' + p[1] + '</span></div>';
+      }).join('');
+    sSpecs.innerHTML = specs;
+    sSpecs.hidden = !specs;
+
+    sText.innerHTML = c.text.map(function (t) {
+      return '<p>' + t.replace(
+        /(https?:\/\/)?(vetcityadoption\.ru\/?)/g,
+        '<a href="https://vetcityadoption.ru/" target="_blank" rel="noopener">vetcityadoption.ru</a>'
+      ) + '</p>';
+    }).join('');
+
+    sMail.href = 'mailto:Natalya.Batueva@etalongroup.com?subject=' +
+      encodeURIComponent('Хочу забрать домой: ' + c.name);
+
+    sThumbs.innerHTML = c.photos.length > 1
+      ? c.photos.map(function (src, k) {
+          return '<button class="sheet__thumb" type="button" data-k="' + k + '" aria-label="Фото ' + (k + 1) + '">' +
+                 '<img src="' + src + '" alt="" loading="lazy"></button>';
+        }).join('')
+      : '';
+    sThumbs.hidden = c.photos.length < 2;
+
+    paintPhoto();
+    sheet.classList.add('is-open');
+    document.body.classList.add('is-locked');
+    $('[data-sheet="close"]', sheet).focus();
+  }
+
+  function closeSheet() {
+    sheet.classList.remove('is-open');
+    document.body.classList.remove('is-locked');
+    if (sheetFocus) sheetFocus.focus();
+  }
+
+  if (cardsBox) {
+    cardsBox.addEventListener('click', function (e) {
+      var card = e.target.closest('.card');
+      if (card) openSheet(+card.dataset.i);
+    });
+  }
+
+  if (sheet) {
+    sheet.addEventListener('click', function (e) {
+      var thumb = e.target.closest('.sheet__thumb');
+      if (thumb) { shot = +thumb.dataset.k; paintPhoto(); return; }
+
+      var act = e.target.closest('[data-sheet]');
+      if (act) {
+        var a = act.dataset.sheet;
+        var n = CATS[cur].photos.length;
+        if (a === 'close') closeSheet();
+        if (a === 'prev') { shot = (shot - 1 + n) % n; paintPhoto(); }
+        if (a === 'next') { shot = (shot + 1) % n; paintPhoto(); }
+        return;
+      }
+      if (e.target === sheet) closeSheet();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!sheet.classList.contains('is-open')) return;
+      var n = CATS[cur].photos.length;
+      if (e.key === 'Escape') closeSheet();
+      if (e.key === 'ArrowLeft')  { shot = (shot - 1 + n) % n; paintPhoto(); }
+      if (e.key === 'ArrowRight') { shot = (shot + 1) % n; paintPhoto(); }
+    });
+  }
+
   /* ------------------------------------------------------------------
      12. Плавная прокрутка по якорям
      ------------------------------------------------------------------ */

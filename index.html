@@ -156,46 +156,8 @@
       </div>
     </div>
 
-    <!-- Пять карточек — по одной на каждую спасённую -->
-    <div class="wards">
-      <article class="ward" data-reveal="scale" style="--d:0">
-        <span class="ward__n">01</span>
-        <span class="ward__paw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.8"/><ellipse cx="12" cy="6.3" rx="2.1" ry="2.9"/><ellipse cx="17" cy="8" rx="2.1" ry="2.8"/><path d="M12 11c3 0 5.4 2.3 5.4 4.7 0 2-1.6 3.3-3.4 3.3-1 0-1.4-.4-2-.4s-1 .4-2 .4c-1.8 0-3.4-1.3-3.4-3.3C6.6 13.3 9 11 12 11z"/></svg></span>
-        <h3 class="ward__title">Подопечная 01</h3>
-        <span class="ward__status">Ждёт дом</span>
-      </article>
-      <article class="ward" data-reveal="scale" style="--d:80">
-        <span class="ward__n">02</span>
-        <span class="ward__paw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.8"/><ellipse cx="12" cy="6.3" rx="2.1" ry="2.9"/><ellipse cx="17" cy="8" rx="2.1" ry="2.8"/><path d="M12 11c3 0 5.4 2.3 5.4 4.7 0 2-1.6 3.3-3.4 3.3-1 0-1.4-.4-2-.4s-1 .4-2 .4c-1.8 0-3.4-1.3-3.4-3.3C6.6 13.3 9 11 12 11z"/></svg></span>
-        <h3 class="ward__title">Подопечная 02</h3>
-        <span class="ward__status">Ждёт дом</span>
-      </article>
-      <article class="ward" data-reveal="scale" style="--d:160">
-        <span class="ward__n">03</span>
-        <span class="ward__paw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.8"/><ellipse cx="12" cy="6.3" rx="2.1" ry="2.9"/><ellipse cx="17" cy="8" rx="2.1" ry="2.8"/><path d="M12 11c3 0 5.4 2.3 5.4 4.7 0 2-1.6 3.3-3.4 3.3-1 0-1.4-.4-2-.4s-1 .4-2 .4c-1.8 0-3.4-1.3-3.4-3.3C6.6 13.3 9 11 12 11z"/></svg></span>
-        <h3 class="ward__title">Подопечная 03</h3>
-        <span class="ward__status">Ждёт дом</span>
-      </article>
-      <article class="ward" data-reveal="scale" style="--d:240">
-        <span class="ward__n">04</span>
-        <span class="ward__paw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.8"/><ellipse cx="12" cy="6.3" rx="2.1" ry="2.9"/><ellipse cx="17" cy="8" rx="2.1" ry="2.8"/><path d="M12 11c3 0 5.4 2.3 5.4 4.7 0 2-1.6 3.3-3.4 3.3-1 0-1.4-.4-2-.4s-1 .4-2 .4c-1.8 0-3.4-1.3-3.4-3.3C6.6 13.3 9 11 12 11z"/></svg></span>
-        <h3 class="ward__title">Подопечная 04</h3>
-        <span class="ward__status">Ждёт дом</span>
-      </article>
-      <article class="ward" data-reveal="scale" style="--d:320">
-        <span class="ward__n">05</span>
-        <span class="ward__paw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.8"/><ellipse cx="12" cy="6.3" rx="2.1" ry="2.9"/><ellipse cx="17" cy="8" rx="2.1" ry="2.8"/><path d="M12 11c3 0 5.4 2.3 5.4 4.7 0 2-1.6 3.3-3.4 3.3-1 0-1.4-.4-2-.4s-1 .4-2 .4c-1.8 0-3.4-1.3-3.4-3.3C6.6 13.3 9 11 12 11z"/></svg></span>
-        <h3 class="ward__title">Подопечная 05</h3>
-        <span class="ward__status">Ждёт дом</span>
-      </article>
-    </div>
-
-    <!-- Характеры — из описания приюта -->
-    <div class="traits">
-      <div class="trait" data-reveal style="--d:0">Кто-то осторожно знакомится с людьми</div>
-      <div class="trait" data-reveal style="--d:110">Кто-то уже готов к общению</div>
-      <div class="trait" data-reveal style="--d:220">А кто-то просто ждет того самого человека</div>
-    </div>
+    <!-- Пять подопечных: карточки рендерятся из assets/js/cats.js -->
+    <div class="cards" id="cards" data-reveal></div>
 
     <!-- Документальные кадры спасения -->
     <h3 class="shots__title" data-reveal>Хроника спасения</h3>
@@ -400,6 +362,42 @@
   <a class="btn btn--light" href="https://qr.nspk.ru/AS1A0040VD6O96D79AFRQUHEGK79DQQD" target="_blank" rel="noopener">Помочь</a>
 </div>
 
+<!-- ====================== КАРТОЧКА ПОДОПЕЧНОГО ====================== -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetName">
+  <div class="sheet__panel" role="document">
+    <button class="sheet__close" type="button" data-sheet="close" aria-label="Закрыть">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div class="sheet__media">
+      <div class="sheet__stage">
+        <img id="sheetPhoto" src="" alt="">
+        <button class="sheet__nav sheet__nav_prev" type="button" data-sheet="prev" aria-label="Предыдущее фото">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="sheet__nav sheet__nav_next" type="button" data-sheet="next" aria-label="Следующее фото">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+        <span class="sheet__count" id="sheetCount"></span>
+      </div>
+      <div class="sheet__thumbs" id="sheetThumbs"></div>
+    </div>
+
+    <div class="sheet__body">
+      <h3 class="sheet__name" id="sheetName"></h3>
+      <div class="sheet__specs" id="sheetSpecs"></div>
+      <div class="sheet__text" id="sheetText"></div>
+      <div class="sheet__actions">
+        <a class="btn btn--lg" id="sheetForm" href="https://vetcityadoption.ru/" target="_blank" rel="noopener">
+          Заполнить анкету
+          <svg class="btn__ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--lg" id="sheetMail" href="mailto:Natalya.Batueva@etalongroup.com">Написать нам</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ====================== ЛАЙТБОКС ====================== -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
   <button class="lightbox__close" type="button" data-lb="close" aria-label="Закрыть">
@@ -418,6 +416,7 @@
 </div>
 
 <script src="assets/js/lqip.js" defer></script>
+<script src="assets/js/cats.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>
