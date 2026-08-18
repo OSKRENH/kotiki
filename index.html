@@ -1,422 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Помоги нам найти дом — Эталон и Vetcity Adoption</title>
-<meta name="description" content="Эталон и Vetcity Adoption спасают кошек с «Электрозавода», обеспечивая им уход и обследование. Помогите подопечным обрести дом.">
-<meta name="theme-color" content="#fc6337">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Помоги нам найти дом — Эталон и Vetcity Adoption">
-<meta property="og:description" content="Cпасают кошек с Электрозавода, обеспечивая им уход и обследование">
-<meta property="og:image" content="assets/img/og-cover.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐱%3C/text%3E%3C/svg%3E">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,400;1,400&display=swap">
-<link rel="preload" as="image" href="assets/img/hero.jpg">
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171513" />
+  <meta name="description" content="Помогаем кошкам с территории проекта «Электрозавод» обрести безопасность, заботу и любящую семью вместе с Vetcity Adoption." />
+  <meta property="og:title" content="Помоги нам найти дом — Эталон × Vetcity Adoption" />
+  <meta property="og:description" content="Познакомьтесь со спасёнными кошками с «Электрозавода» и помогите им обрести дом." />
+  <meta property="og:type" content="website" />
+  <title>Помоги нам найти дом — Эталон × Vetcity Adoption</title>
+  <link rel="preconnect" href="https://feeds.tildaapi.com" crossorigin>
+  <link rel="preconnect" href="https://static.tildacdn.com" crossorigin>
+  <link rel="preconnect" href="https://thb.tildacdn.com" crossorigin>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-<a class="skip-link" href="#story">Перейти к содержанию</a>
-<div class="progress" id="progress"></div>
+  <a class="skip-link" href="#main">К содержанию</a>
 
-<!-- ====================== ШАПКА ====================== -->
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a class="nav__logo" href="#top" aria-label="Эталон × Vetcity Adoption">
-      <img src="assets/img/logo-etalon-vetcity.svg" alt="Эталон и Vetcity Adoption" width="250" height="25">
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Эталон и Vetcity Adoption — на главную">
+      <img src="https://static.tildacdn.com/tild3034-6363-4465-a532-393532633164/etalon_X_vetcity.svg" alt="Эталон × Vetcity Adoption" />
     </a>
-    <a class="nav__tel" href="tel:+79174814048">+7 917 481 40 48</a>
-    <a class="btn btn--light btn--sm" href="https://qr.nspk.ru/AS1A0040VD6O96D79AFRQUHEGK79DQQD" target="_blank" rel="noopener" data-magnetic>
-      Помочь питомцам
-    </a>
-  </div>
-</header>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#story">История</a>
+      <a href="#cats">Кошки</a>
+      <a href="#help">Как помогаем</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="button button--small button--light" href="#cats">Забрать домой <span aria-hidden="true">↗</span></a>
+  </header>
 
-<!-- ====================== ПЕРВЫЙ ЭКРАН ====================== -->
-<main id="top">
-<section class="hero" id="hero">
-  <div class="hero__media" id="heroMedia" style="background-image:url('assets/img/hero.jpg')"></div>
-  <div class="hero__scrim"></div>
-  <div class="hero__grain"></div>
-  <div class="paws" id="paws" aria-hidden="true"></div>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
 
-  <div class="hero__inner">
-    <span class="eyebrow">Эталон × Vetcity Adoption</span>
-
-    <h1 class="h1 hero__title" data-split>Помоги нам найти дом</h1>
-
-    <p class="hero__sub hero__fade-up">
-      Мы спасаем кошек с территории проекта «Электрозавод»: лечим, выхаживаем
-      и ищем для каждой любящую семью. Возможно, вашу.
-    </p>
-
-    <div class="hero__actions hero__fade-up">
-      <a class="btn btn--lg" href="#cats" data-magnetic>
-        Забрать домой
-        <svg class="btn__ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a class="btn btn--ghost btn--lg" href="#donate" data-magnetic>Поддержать рублём</a>
-    </div>
-
-    <div class="hero__stats hero__fade-up">
-      <div class="stat">
-        <div class="stat__num" data-count="5">0</div>
-        <div class="stat__label">кошек уже спасено</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-count="3">0</div>
-        <div class="stat__label">этапа помощи</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-count="2">0</div>
-        <div class="stat__label">организации-партнёра</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num"><span>∞</span></div>
-        <div class="stat__label">заботы для каждой</div>
-      </div>
-    </div>
-
-    <a class="hero__cue hero__fade-up" href="#story"><i></i> Листайте вниз</a>
-  </div>
-</section>
-
-<!-- ====================== БЕГУЩАЯ СТРОКА ====================== -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track" id="ticker"></div>
-</div>
-
-<!-- ====================== ИСТОРИЯ ====================== -->
-<section class="section" id="story">
-  <div class="shell">
-    <div class="story__grid">
-      <div class="story__text" data-reveal="left">
-        <span class="eyebrow">С июня 2026 года</span>
-        <h2 class="h2 accent">История спасения кошек</h2>
-        <p class="lead">
-          В июне 2026 года на территории проекта «Электрозавод» началась операция по спасению
-          бездомных кошек. Мы решили помочь животным, которые оказались без дома, и дать им
-          возможность обрести безопасность, заботу и любящую семью.
-        </p>
-        <p class="lead">
-          Нашими партнерами в этой работе стали <span class="mark">Vetcity Adoption</span>.
-          Вместе мы организуем отлов и вывоз кошек с территории проекта, обеспечиваем им
-          необходимую помощь и занимаемся поиском новых хозяев.
-        </p>
-        <div class="story__partners">
-          <span class="chip"><i></i> Эталон</span>
-          <span class="chip"><i></i> Vetcity Adoption</span>
-          <span class="chip"><i></i> Проект «Электрозавод»</span>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Эталон × Vetcity Adoption</p>
+        <h1 id="hero-title">Помоги нам<br><em>найти дом</em></h1>
+        <p class="hero-lead">Пять кошек с территории «Электрозавода» уже в безопасности. Теперь им нужен самый важный адрес — домашний.</p>
+        <div class="hero-actions">
+          <a class="button button--accent magnetic" href="#cats">Познакомиться с кошками <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://qr.nspk.ru/AS1A0040VD6O96D79AFRQUHEGK79DQQD" target="_blank" rel="noopener">Помочь питомцам <span aria-hidden="true">↗</span></a>
         </div>
       </div>
 
-      <figure class="story__figure media" data-reveal="right" data-lqip="story.jpg">
-        <img src="assets/img/story.jpg" alt="Спасённая кошка с территории проекта «Электрозавод»" width="1031" height="1280" loading="lazy" decoding="async">
-        <figcaption class="story__badge"><b>Июнь 2026</b> · операция началась</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== ПОДОПЕЧНЫЕ ====================== -->
-<section class="section" id="cats" style="background:var(--cream-deep)">
-  <div class="shell">
-
-    <div class="cats__head">
-      <div data-reveal>
-        <img class="lettering" src="assets/img/lettering-take-me-home.svg"
-             alt="Забери меня домой" width="216" height="103" loading="lazy">
-        <span class="eyebrow">Ждут своего человека</span>
-        <h2 class="h2 accent" style="margin-top:16px">Первые спасенные с «Электрозавода»</h2>
-      </div>
-      <a class="btn" href="mailto:Natalya.Batueva@etalongroup.com?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D1%88%D0%BA%D1%83%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B9" data-reveal data-magnetic style="--d:120">
-        Хочу забрать
-        <svg class="btn__ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-
-    <!-- Главный акцент: пятеро подопечных -->
-    <div class="tally" data-reveal>
-      <div class="tally__num" data-count="5" aria-hidden="true">0</div>
-      <div class="tally__body">
-        <p class="lead" style="margin:0">
-          На сегодняшний день уже спасены <span class="mark">пять кошек</span>. Теперь они находятся
-          в безопасности и ждут встречи со своими будущими семьями.
-        </p>
-        <p class="lead" style="margin-top:14px">
-          У каждой — свой характер и своя история.
-        </p>
-      </div>
-    </div>
-
-    <!-- Пять подопечных: карточки рендерятся из assets/js/cats.js -->
-    <div class="cards" id="cards" data-reveal></div>
-
-    <!-- Документальные кадры спасения -->
-    <h3 class="shots__title" data-reveal>Хроника спасения</h3>
-    <div class="shots" id="gallery">
-      <button class="shot media" type="button" data-reveal="scale" style="--d:0"
-              data-lqip="cat-1.jpg" data-full="assets/img/cat-1.jpg"
-              aria-label="Открыть фотографию из хроники спасения №1">
-        <img src="assets/img/cat-1.jpg" alt="Хроника спасения кошек с «Электрозавода» — кадр 1"
-             width="1000" height="1333" loading="lazy" decoding="async">
-        <span class="shot__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg></span>
-        <span class="shot__cap">Июнь 2026 · «Электрозавод»</span>
-      </button>
-      <button class="shot media" type="button" data-reveal="scale" style="--d:80"
-              data-lqip="cat-2.jpg" data-full="assets/img/cat-2.jpg"
-              aria-label="Открыть фотографию из хроники спасения №2">
-        <img src="assets/img/cat-2.jpg" alt="Хроника спасения кошек с «Электрозавода» — кадр 2"
-             width="1000" height="1333" loading="lazy" decoding="async">
-        <span class="shot__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg></span>
-        <span class="shot__cap">Июнь 2026 · «Электрозавод»</span>
-      </button>
-      <button class="shot media" type="button" data-reveal="scale" style="--d:160"
-              data-lqip="cat-3.jpg" data-full="assets/img/cat-3.jpg"
-              aria-label="Открыть фотографию из хроники спасения №3">
-        <img src="assets/img/cat-3.jpg" alt="Хроника спасения кошек с «Электрозавода» — кадр 3"
-             width="1000" height="1333" loading="lazy" decoding="async">
-        <span class="shot__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg></span>
-        <span class="shot__cap">Июнь 2026 · «Электрозавод»</span>
-      </button>
-      <button class="shot media" type="button" data-reveal="scale" style="--d:240"
-              data-lqip="cat-4.jpg" data-full="assets/img/cat-4.jpg"
-              aria-label="Открыть фотографию из хроники спасения №4">
-        <img src="assets/img/cat-4.jpg" alt="Хроника спасения кошек с «Электрозавода» — кадр 4"
-             width="960" height="1280" loading="lazy" decoding="async">
-        <span class="shot__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg></span>
-        <span class="shot__cap">Июнь 2026 · «Электрозавод»</span>
-      </button>
-    </div>
-
-    <div class="cats__cta" data-reveal>
-      <p class="lead" style="margin:0">
-        Если у вас желание подарить кому-то из этих хвостиков дом, пожалуйста, напишите на почту:
-        <a class="mailto" href="mailto:Natalya.Batueva@etalongroup.com">Natalya.Batueva@etalongroup.com</a>
-      </p>
-      <a class="btn btn--lg" href="mailto:Natalya.Batueva@etalongroup.com?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D1%88%D0%BA%D1%83%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B9" data-magnetic>
-        Написать письмо
-        <svg class="btn__ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ====================== ЦИТАТА ====================== -->
-<section class="section quote">
-  <div class="shell">
-    <div class="quote__glyph" id="quoteMark" aria-hidden="true">“</div>
-    <blockquote class="quote__text" id="quoteText" data-split-words>«Кошки — это видимая душа дома, потому что время, проведённое с ними, никогда не теряется зря».</blockquote>
-    <div class="quote__author" data-reveal>— Жан Кокто</div>
-  </div>
-</section>
-
-<!-- ====================== КАК МЫ ПОМОГАЕМ ====================== -->
-<section class="section" id="help">
-  <div class="shell">
-    <div class="steps__head" data-reveal>
-      <span class="eyebrow">Три шага к новой жизни</span>
-      <h2 class="h2 accent" style="margin-top:16px">Как мы помогаем кошкам</h2>
-      <p class="lead">
-        Процесс спасения и реабилитации кошек на «Электрозаводе»: от отлова до поиска нового дома.
-      </p>
-    </div>
-
-    <div class="steps__grid" data-reveal>
-      <div class="steps__line" aria-hidden="true"></div>
-
-      <article class="step" data-reveal style="--d:0">
-        <div class="step__ico"><img src="assets/img/icon-step-1.svg" alt="" width="44" height="44" loading="lazy"></div>
-        <div class="step__n">Шаг 01</div>
-        <h3 class="h3">Отлов и транспортировка</h3>
-        <p>Специалисты забирают кошек с территории для обеспечения им безопасного пространства.</p>
-      </article>
-
-      <article class="step" data-reveal style="--d:130">
-        <div class="step__ico"><img src="assets/img/icon-step-2.svg" alt="" width="44" height="44" loading="lazy"></div>
-        <div class="step__n">Шаг 02</div>
-        <h3 class="h3">Ветеринарное обследование</h3>
-        <p>Каждой кошке проводится полноценный медицинский осмотр специалистами.</p>
-      </article>
-
-      <article class="step" data-reveal style="--d:260">
-        <div class="step__ico"><img src="assets/img/icon-step-3.svg" alt="" width="44" height="44" loading="lazy"></div>
-        <div class="step__n">Шаг 03</div>
-        <h3 class="h3">Лечение и реабилитация</h3>
-        <p>Кошки получают необходимое лечение и проходят период адаптации в комфортных условиях.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== ПОЖЕРТВОВАНИЕ ====================== -->
-<section class="section donate" id="donate">
-  <div class="shell">
-    <div class="donate__grid">
-      <div data-reveal="left">
-        <span class="eyebrow">Каждый рубль — это корм, лечение и тепло</span>
-        <h2 class="h2">Сделайте пожертвование</h2>
-        <p class="donate__lead">
-          Ваша поддержка поможет в спасении и реабилитации кошек с «Электрозавода»,
-          а также другим подопечным <b>Vetcity Adoption</b>.
-        </p>
-        <div class="donate__actions">
-          <a class="btn btn--onOrange btn--lg" href="https://qr.nspk.ru/AS1A0040VD6O96D79AFRQUHEGK79DQQD" target="_blank" rel="noopener" data-magnetic>
-            Помочь питомцам
-            <svg class="btn__ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn--ghost btn--lg" href="#contacts" data-magnetic>Связаться с нами</a>
-        </div>
-      </div>
-
-      <figure class="qr" data-reveal="scale" style="--d:150">
-        <img src="assets/img/donate-qr.png" alt="QR-код для пожертвования через СБП" width="168" height="168" loading="lazy">
-        <figcaption>Наведите камеру · СБП</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== КОНТАКТЫ И КАРТА ====================== -->
-<section class="section contacts" id="contacts">
-  <div class="shell">
-    <div class="contacts__grid">
-      <div data-reveal="left">
-        <span class="eyebrow">Мы всегда на связи</span>
-        <h2 class="h2">Контакты</h2>
-
-        <div class="contacts__list">
-          <div class="contacts__item">
-            <span class="contacts__ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
-            <span>
-              <span class="contacts__k">Телефон</span>
-              <span class="contacts__v"><a href="tel:+79174814048">+7 917 481 4048</a></span>
-            </span>
-          </div>
-
-          <div class="contacts__item">
-            <span class="contacts__ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
-            <span>
-              <span class="contacts__k">Электронная почта</span>
-              <span class="contacts__v"><a href="mailto:info@adoptionvc.ru">info@adoptionvc.ru</a></span>
-            </span>
-          </div>
-
-          <div class="contacts__item">
-            <span class="contacts__ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span>
-              <span class="contacts__k">Адрес</span>
-              <span class="contacts__v">Москва, Зубарев переулок, 7</span>
-            </span>
+      <div class="hero-visual reveal" data-delay="120">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo skeleton" data-hero-photo aria-hidden="true"></div>
+          <div class="hero-photo-label">
+            <span class="status-dot"></span>
+            <span data-hero-label>Ждёт свою семью</span>
           </div>
         </div>
+        <img class="hero-script" src="https://static.tildacdn.com/tild6139-6465-4631-a535-346233313134/vector.svg" alt="Забери меня домой" />
+      </div>
 
-        <div class="socials">
-          <a href="https://t.me/vetcityclinic" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.3 13.1 1.5 11.6c-1-.3-1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>
-            Telegram
-          </a>
-          <a href="https://vk.ru/vet.city.center" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 18.4c-6.3 0-9.9-4.3-10-11.5h3.2c.1 5.3 2.4 7.5 4.3 8V6.9h3v4.6c1.8-.2 3.7-2.3 4.4-4.6h3c-.5 2.8-2.6 4.9-4.1 5.8 1.5.7 3.9 2.5 4.8 5.7h-3.3c-.7-2.2-2.5-3.9-4.8-4.2v4.2H13z"/></svg>
-            ВКонтакте
-          </a>
+      <div class="hero-scroll" aria-hidden="true"><span></span>Листайте</div>
+    </section>
+
+    <section class="ticker" aria-label="Коротко о проекте">
+      <div class="ticker-track">
+        <span><strong data-cat-count>5</strong> спасённых кошек</span><i>✦</i>
+        <span>Безопасность</span><i>✦</i>
+        <span>Лечение</span><i>✦</i>
+        <span>Адаптация</span><i>✦</i>
+        <span>Новый дом</span><i>✦</i>
+        <span><strong data-cat-count>5</strong> спасённых кошек</span><i>✦</i>
+        <span>Безопасность</span><i>✦</i>
+        <span>Лечение</span><i>✦</i>
+        <span>Адаптация</span><i>✦</i>
+        <span>Новый дом</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="story section" id="story">
+      <div class="section-kicker reveal">01 — История спасения</div>
+      <div class="story-grid">
+        <h2 class="display-title reveal">История спасения<br>кошек</h2>
+        <div class="story-copy reveal" data-delay="100">
+          <p class="lead">В июне 2026 года на территории проекта «Электрозавод» началась операция по спасению бездомных кошек.</p>
+          <p>Мы решили помочь животным, которые оказались без дома, и дать им возможность обрести безопасность, заботу и любящую семью.</p>
+          <p>Нашими партнерами в этой работе стали Vetcity Adoption. Вместе мы организуем отлов и вывоз кошек с территории проекта, обеспечиваем им необходимую помощь и занимаемся поиском новых хозяев.</p>
+        </div>
+      </div>
+      <div class="story-rule"></div>
+      <div class="story-note reveal">
+        <span class="story-number">05</span>
+        <p>кошек уже спасены и находятся в безопасности</p>
+      </div>
+    </section>
+
+    <section class="cats section section--dark" id="cats" aria-labelledby="cats-title">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker section-kicker--light reveal">02 — Первые спасённые</div>
+          <h2 class="display-title reveal" id="cats-title">Познакомьтесь<br>с ними</h2>
+        </div>
+        <div class="section-intro reveal" data-delay="100">
+          <p>На сегодняшний день уже спасены пять кошек. Теперь они находятся в безопасности и ждут встречи со своими будущими семьями.</p>
+          <p>У каждой — свой характер и своя история. Кто-то осторожно знакомится с людьми, кто-то уже готов к общению, а кто-то просто ждет того самого человека.</p>
         </div>
       </div>
 
-      <div class="map" id="map" data-reveal="right"
-           data-src="https://yandex.ru/map-widget/v1/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%97%D1%83%D0%B1%D0%B0%D1%80%D0%B5%D0%B2%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%207&amp;z=16">
-        <span class="map__skeleton" aria-hidden="true"></span>
-        <span class="map__pin"><i></i> Москва, Зубарев переулок, 7</span>
-        <a class="map__link" href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%97%D1%83%D0%B1%D0%B0%D1%80%D0%B5%D0%B2%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%207" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a>
+      <div class="cats-status" data-feed-status role="status">Загружаем анкеты подопечных…</div>
+      <div class="cats-grid" data-cats-grid aria-live="polite"></div>
+
+      <div class="cats-cta reveal">
+        <div>
+          <p class="cats-cta-title">Каждая встреча может стать той самой.</p>
+          <p>Если у вас есть желание подарить кому-то из этих хвостиков дом, напишите нам — мы расскажем, что делать дальше.</p>
+        </div>
+        <a class="button button--accent magnetic" href="mailto:Natalya.Batueva@etalongroup.com?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D1%88%D0%BA%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20%C2%AB%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%B7%D0%B0%D0%B2%D0%BE%D0%B4%C2%BB">Хочу подарить дом <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="quote section" aria-label="Цитата">
+      <div class="quote-mark reveal">“</div>
+      <blockquote class="reveal">
+        <p>«Кошки — это видимая душа дома, потому что время, проведённое с ними, никогда не теряется зря».</p>
+        <footer>— Жан Кокто</footer>
+      </blockquote>
+    </section>
+
+    <section class="process section" id="help" aria-labelledby="help-title">
+      <div class="section-head section-head--process">
+        <div>
+          <div class="section-kicker reveal">03 — Как мы помогаем</div>
+          <h2 class="display-title reveal" id="help-title">От улицы<br>до дома</h2>
+        </div>
+        <p class="section-intro reveal" data-delay="100">Процесс спасения и реабилитации кошек на «Электрозаводе»: от отлова до поиска нового дома.</p>
+      </div>
+
+      <div class="process-list">
+        <article class="process-item reveal">
+          <span class="process-index">01</span>
+          <div class="process-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M12 41c8-13 16-20 24-20 10 0 16 7 16 17 0 7-4 12-11 12H25c-7 0-13-3-13-9Z"/><path d="M19 27 15 15l12 7M43 23l7-10 3 14"/></svg>
+          </div>
+          <h3>Отлов и транспортировка</h3>
+          <p>Специалисты забирают кошек с территории для обеспечения им безопасного пространства.</p>
+        </article>
+        <article class="process-item reveal" data-delay="80">
+          <span class="process-index">02</span>
+          <div class="process-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M32 54s20-11 20-27A11 11 0 0 0 32 20 11 11 0 0 0 12 27c0 16 20 27 20 27Z"/><path d="M32 25v14M25 32h14"/></svg>
+          </div>
+          <h3>Ветеринарное обследование</h3>
+          <p>Каждой кошке проводится полноценный медицинский осмотр специалистами.</p>
+        </article>
+        <article class="process-item reveal" data-delay="160">
+          <span class="process-index">03</span>
+          <div class="process-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M11 33 32 15l21 18v19H38V39H26v13H11Z"/><path d="M26 25h12"/></svg>
+          </div>
+          <h3>Лечение и реабилитация</h3>
+          <p>Кошки получают необходимое лечение и проходят период адаптации в комфортных условиях.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="donate section" id="donate">
+      <div class="donate-card reveal">
+        <div class="donate-copy">
+          <p class="eyebrow">Помочь прямо сейчас</p>
+          <h2>Сделайте<br>пожертвование</h2>
+          <p>Ваша поддержка поможет в спасении и реабилитации кошек с «Электрозавода», а также другим подопечным Vetcity Adoption.</p>
+          <a class="button button--dark magnetic" href="https://qr.nspk.ru/AS1A0040VD6O96D79AFRQUHEGK79DQQD" target="_blank" rel="noopener">Помочь питомцам <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="donate-art" aria-hidden="true">
+          <span class="donate-heart">♡</span>
+          <span class="donate-paw donate-paw--1">●</span>
+          <span class="donate-paw donate-paw--2">●</span>
+          <span class="donate-paw donate-paw--3">●</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts section section--dark" id="contacts" aria-labelledby="contacts-title">
+      <div class="section-kicker section-kicker--light reveal">04 — Контакты</div>
+      <div class="contacts-grid">
+        <div class="contacts-copy reveal">
+          <h2 class="display-title" id="contacts-title">Давайте<br>на связи</h2>
+          <div class="contact-list">
+            <a href="tel:+79174814048"><span>Телефон</span><strong>+7 917 481 40 48</strong></a>
+            <a href="mailto:info@adoptionvc.ru"><span>Электронная почта</span><strong>info@adoptionvc.ru</strong></a>
+            <a href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%97%D1%83%D0%B1%D0%B0%D1%80%D0%B5%D0%B2%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%207" target="_blank" rel="noopener"><span>Адрес</span><strong>Москва, Зубарев переулок, 7</strong></a>
+          </div>
+        </div>
+        <div class="map-wrap reveal" data-delay="100">
+          <iframe title="Vetcity Adoption на карте" src="https://yandex.ru/map-widget/v1/?mode=search&text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%97%D1%83%D0%B1%D0%B0%D1%80%D0%B5%D0%B2%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%207&z=16" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="https://static.tildacdn.com/tild3034-6363-4465-a532-393532633164/etalon_X_vetcity.svg" alt="Эталон × Vetcity Adoption" />
+    <p>2026 © АНО «ЦППЖ»</p>
+    <a href="#top">Наверх ↑</a>
+  </footer>
+
+  <div class="cat-modal" data-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" type="button" data-close-modal aria-label="Закрыть анкету">×</button>
+      <div class="modal-gallery">
+        <div class="modal-main-image" data-modal-image></div>
+        <button class="gallery-arrow gallery-arrow--prev" type="button" data-gallery-prev aria-label="Предыдущее фото">←</button>
+        <button class="gallery-arrow gallery-arrow--next" type="button" data-gallery-next aria-label="Следующее фото">→</button>
+        <div class="gallery-counter" data-gallery-counter></div>
+        <div class="gallery-thumbs" data-gallery-thumbs></div>
+      </div>
+      <div class="modal-content">
+        <p class="modal-status" data-modal-status>Ищет дом</p>
+        <h2 id="modal-title" data-modal-title>Подопечный</h2>
+        <div class="modal-meta" data-modal-meta></div>
+        <div class="modal-text" data-modal-text></div>
+        <a class="button button--accent" data-modal-cta href="mailto:Natalya.Batueva@etalongroup.com">Хочу познакомиться <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
-</section>
-</main>
 
-<!-- ====================== ПОДВАЛ ====================== -->
-<footer class="footer">
-  <div class="shell footer__inner">
-    <a class="footer__logo" href="#top" aria-label="Эталон × Vetcity Adoption">
-      <img src="assets/img/logo-etalon-vetcity.svg" alt="Эталон и Vetcity Adoption" width="280" height="28">
-    </a>
-    <p class="footer__copy">2026 © АНО «ЦППЖ»</p>
-    <a class="footer__up" href="#top">
-      Наверх
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span>
-    </a>
-  </div>
-</footer>
-
-<!-- ====================== ЛИПКАЯ CTA ====================== -->
-<div class="dock" id="dock">
-  <a class="btn" href="mailto:Natalya.Batueva@etalongroup.com?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D1%88%D0%BA%D1%83%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%B9">Забрать домой</a>
-  <a class="btn btn--light" href="https://qr.nspk.ru/AS1A0040VD6O96D79AFRQUHEGK79DQQD" target="_blank" rel="noopener">Помочь</a>
-</div>
-
-<!-- ====================== КАРТОЧКА ПОДОПЕЧНОГО ====================== -->
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetName">
-  <div class="sheet__panel" role="document">
-    <button class="sheet__close" type="button" data-sheet="close" aria-label="Закрыть">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-
-    <div class="sheet__media">
-      <div class="sheet__stage">
-        <img id="sheetPhoto" src="" alt="">
-        <button class="sheet__nav sheet__nav_prev" type="button" data-sheet="prev" aria-label="Предыдущее фото">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
-        </button>
-        <button class="sheet__nav sheet__nav_next" type="button" data-sheet="next" aria-label="Следующее фото">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-        </button>
-        <span class="sheet__count" id="sheetCount"></span>
-      </div>
-      <div class="sheet__thumbs" id="sheetThumbs"></div>
-    </div>
-
-    <div class="sheet__body">
-      <h3 class="sheet__name" id="sheetName"></h3>
-      <div class="sheet__specs" id="sheetSpecs"></div>
-      <div class="sheet__text" id="sheetText"></div>
-      <div class="sheet__actions">
-        <a class="btn btn--lg" id="sheetForm" href="https://vetcityadoption.ru/" target="_blank" rel="noopener">
-          Заполнить анкету
-          <svg class="btn__ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn btn--ghost btn--lg" id="sheetMail" href="mailto:Natalya.Batueva@etalongroup.com">Написать нам</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ====================== ЛАЙТБОКС ====================== -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
-  <button class="lightbox__close" type="button" data-lb="close" aria-label="Закрыть">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-  </button>
-  <img id="lightboxImg" src="" alt="">
-  <div class="lightbox__bar">
-    <button class="lightbox__btn" type="button" data-lb="prev" aria-label="Предыдущее фото">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
-    </button>
-    <span id="lightboxCount">1 / 4</span>
-    <button class="lightbox__btn" type="button" data-lb="next" aria-label="Следующее фото">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-    </button>
-  </div>
-</div>
-
-<script src="assets/js/lqip.js" defer></script>
-<script src="assets/js/cats.js" defer></script>
-<script src="assets/js/main.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
